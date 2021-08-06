@@ -8,7 +8,7 @@ public class CategoryController {
 	CategoryService categoryService = new CategoryService();
 	
 	public String createCategory(Category category) {
-		return null;
+		return categoryService.createCategory(category);
 	}
 	
 	public void updateCategory(Category category) {

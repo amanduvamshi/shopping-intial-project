@@ -7,9 +7,10 @@ import com.shopping.model.Category;
 
 public class CategoryDAO {
 	
-	private List<Category> categories=null;
+	public List<Category> categories=new ArrayList<Category>();
 	
 	public String createCategory(Category category) {
+		categories.add(category);
 	return null;
 	}
 	
@@ -22,7 +23,22 @@ public class CategoryDAO {
 	}
 	
 	public Category getCategory(String categoryId) {
+		
+		System.out.println("Entered into getCategory...");
+		System.out.println("Categories..."+categories);
+		for(int i=0;i<categories.size();i++) {
+			if(categories.get(i).getCategoryId().equals(categoryId)) {
+				System.out.println("Category Found With Given Id."+categoryId);
+			System.out.println(categories.get(i));
+			return categories.get(i);
+			}
+		}
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "CategoryDAO [categories=" + categories + "]";
 	}
 	
 	

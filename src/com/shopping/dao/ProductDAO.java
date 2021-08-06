@@ -11,17 +11,15 @@ public class ProductDAO {
 	
 private List<Product> products=new ArrayList<Product>();
 	
-	public String createProduct(Product product) {
+	public String createProduct(CategoryDAO categoryDAO,Product product) {
 		
-		boolean isAdded= products.add(product);
-		if(isAdded) {
-			String categoryId=product.getCategoryId();
-			System.out.println("categoryId:"+categoryId);
-			Category category=new CategoryController().getCategory(categoryId);
-			System.out.println("category:"+category);
-			category.setProducts(products);
-			return "Product Inserted Successfully.";
-		}
+	boolean status=	products.add(product);
+	if(status) {
+		String categoryId=product.getCategoryId();
+	Category category=	categoryDAO.getCategory(categoryId);
+	category.setProducts(products);
+	}
+	
 			
 		return null;
 	}

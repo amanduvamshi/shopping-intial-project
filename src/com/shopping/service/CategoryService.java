@@ -8,7 +8,7 @@ public class CategoryService {
 	CategoryDAO categoryDAO=new CategoryDAO();
 	
 	public String createCategory(Category category) {
-		return null;
+		return categoryDAO.createCategory(category);
 		
 	}
 	
