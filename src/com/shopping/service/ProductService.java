@@ -1,5 +1,8 @@
 package com.shopping.service;
 
+import java.util.List;
+import java.util.Map;
+
 import com.shopping.dao.CategoryDAO;
 import com.shopping.dao.ProductDAO;
 import com.shopping.model.Product;
@@ -22,8 +25,8 @@ public class ProductService {
 		
 	}
 	
-	public void getProduct(String productId) {
-		
+	public void  getProduct(String productId) {
+		 productDAO.getAllProductsBasedOnProductType(productId);
 	}
 
 }
